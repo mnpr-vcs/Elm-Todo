@@ -1,0 +1,11 @@
+# elm-package generated files
+elm-stuff
+
+# elm-repl generated files
+repl-temp-*
+
+#node js file
+node_modules
+
+#compiled js file
+elm.js

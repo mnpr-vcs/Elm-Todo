@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do</title>
+  <script type="text/javascript" src="elm.js"></script>
+  <link rel="stylesheet" href="elm.css">
+</head>
+
+<body>
+</body>
+<div id="elm"></div>
+<script>
+    let getTodo= JSON.parse(window.localStorage.getItem('todoElm'))
+    let app = Elm.Main.init({
+      node: document.getElementById('elm'),
+      flags: getTodo
+    });
+
+    app.ports.sendTodo.subscribe(function (data) {
+      window.localStorage.setItem('todoElm', JSON.stringify(data));
+    });
+  </script>
+
+</html>
